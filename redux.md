@@ -159,6 +159,8 @@ const tasksReducer = (state = [], action) => {
   }
 }
 
+const reducers = combineReducers({text: textReducer, tasks: tasksReducer});
+
 const addTaskAction = (task) => ({
   type: 'TASK_ADD',
   payload: { task },
@@ -208,7 +210,7 @@ const Tasks = connect(mapStateToProps)(dispatch, text, tasks) => {
   );
 }
 
-const store = createStore(combineReducers({text: textReducer, tasks: tasksReducer}));
+const store = createStore(reducers);
 
 render(
   <Provider store={store}>
