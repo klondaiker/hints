@@ -136,7 +136,7 @@ ReactDOM.render(
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { createStore } from 'redux';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import _ from 'lodash';
 
 const textReducer = (state = '', action) => {
