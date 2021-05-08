@@ -84,7 +84,7 @@ const changeTextAction = (text) => ({
   payload: { text },
 });
 
-const Tasks = (dispatch, text, tasks) => {
+const Tasks = ({dispatch, text, tasks}) => {
   const onChangeText = (e) => {
     e.preventDefault();
 
@@ -178,7 +178,7 @@ const mapStateToProps = (state) => {
   return props;
 };
 
-const Tasks = connect(mapStateToProps)(dispatch, text, tasks) => {
+const Tasks = connect(mapStateToProps)({ dispatch, text, tasks }) => {
   const onChangeText = (e) => {
     e.preventDefault();
 
