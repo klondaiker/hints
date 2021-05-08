@@ -29,21 +29,23 @@ class Tasks extends React.Component {
     const { text, tasks } = this.state;
   
     return (
-      <form action="" className="form-inline" onSubmit={onSubmitForm}>
-        <div className="form-group mx-sm-3">
-          <input type="text" required value={text} onChange={this.onChangeText} />
+      <div>
+        <form action="" className="form-inline" onSubmit={onSubmitForm}>
+          <div className="form-group mx-sm-3">
+            <input type="text" required value={text} onChange={this.onChangeText} />
+          </div>
+          <input type="submit" className="btn btn-primary btn-sm" value="Add" />
+        </form>
+        <div className="mt-3">
+          <ul className="list-group">
+            {tasks.map(({ id, text }) => (
+              <li key={id} className="list-group-item d-flex">
+                <span className="mr-auto">{text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <input type="submit" className="btn btn-primary btn-sm" value="Add" />
-      </form>
-      <div className="mt-3">
-        <ul className="list-group">
-          {tasks.map(({ id, text }) => (
-            <li key={id} className="list-group-item d-flex">
-              <span className="mr-auto">{text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>    
+       </div>
     );
   }
 }
@@ -97,21 +99,23 @@ const Tasks = ({dispatch, text, tasks}) => {
   }
 
   return (
-    <form action="" className="form-inline" onSubmit={onSubmitForm}>
-      <div className="form-group mx-sm-3">
-        <input type="text" required value={text} onChange={this.onChangeText} />
+    <div>
+      <form action="" className="form-inline" onSubmit={onSubmitForm}>
+        <div className="form-group mx-sm-3">
+          <input type="text" required value={text} onChange={this.onChangeText} />
+        </div>
+        <input type="submit" className="btn btn-primary btn-sm" value="Add" />
+      </form>
+      <div className="mt-3">
+        <ul className="list-group">
+          {tasks.map(({ id, text }) => (
+            <li key={id} className="list-group-item d-flex">
+              <span className="mr-auto">{text}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <input type="submit" className="btn btn-primary btn-sm" value="Add" />
-    </form>
-    <div className="mt-3">
-      <ul className="list-group">
-        {tasks.map(({ id, text }) => (
-          <li key={id} className="list-group-item d-flex">
-            <span className="mr-auto">{text}</span>
-          </li>
-        ))}
-      </ul>
-    </div>  
+    </div>
   );
 }
 
@@ -192,21 +196,23 @@ const Tasks = connect(mapStateToProps)({ dispatch, text, tasks }) => {
   }
 
   return (
-    <form action="" className="form-inline" onSubmit={onSubmitForm}>
-      <div className="form-group mx-sm-3">
-        <input type="text" required value={text} onChange={this.onChangeText} />
+    <div>
+      <form action="" className="form-inline" onSubmit={onSubmitForm}>
+        <div className="form-group mx-sm-3">
+          <input type="text" required value={text} onChange={this.onChangeText} />
+        </div>
+        <input type="submit" className="btn btn-primary btn-sm" value="Add" />
+      </form>
+      <div className="mt-3">
+        <ul className="list-group">
+          {tasks.map(({ id, text }) => (
+            <li key={id} className="list-group-item d-flex">
+              <span className="mr-auto">{text}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <input type="submit" className="btn btn-primary btn-sm" value="Add" />
-    </form>
-    <div className="mt-3">
-      <ul className="list-group">
-        {tasks.map(({ id, text }) => (
-          <li key={id} className="list-group-item d-flex">
-            <span className="mr-auto">{text}</span>
-          </li>
-        ))}
-      </ul>
-    </div>  
+    </div>
   );
 }
 
