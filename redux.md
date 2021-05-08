@@ -72,8 +72,6 @@ const reducer = (state = { text: '', tasks: [] }, action) => {
   }
 }
 
-const store = createStore(reducer);
-
 const addTaskAction = (task) => ({
   type: 'TASK_ADD',
   payload: { task },
@@ -116,6 +114,8 @@ const Tasks = ({dispatch, text, tasks}) => {
     </div>  
   );
 }
+
+const store = createStore(reducer);
 
 store.subscribe(() => {
   const { text, tasks } = store.getState();
