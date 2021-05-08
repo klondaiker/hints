@@ -225,3 +225,87 @@ render(
   document.getElementById('container'),
 );
 ```
+
+
+Добавил reduxActions и actionCreators, 
+```jsx
+import ReactDOM from 'react-dom';
+import React from 'react';
+import { createStore } from 'redux';
+import { connect, Provider } from 'react-redux';
+import { createAction, handleActions } from 'redux-actions';
+import _ from 'lodash';
+
+const addTaskAction = createAction('USER_ADD');
+const changeTextAction = createAction('TEXT_CHANGE');
+
+const textHandlers = {
+  [changeTextAction]: ((state, { payload: { text } }) => text), 
+  [addTaskAction]: (() => ''), 
+};
+
+const textReducer = handleActions(textHandlers, '');
+
+const tasksHandlers = {
+  [addTaskAction]: ((state, { payload: { task } }) => [task, ...state]), 
+};
+
+const tasksReducer = handleActions(tasksHandlers, '');
+
+const reducers = combineReducers({text: textReducer, tasks: tasksReducer});
+
+const mapStateToProps = (state) => {
+  const { tasks, text } = state;
+  const props = {tasks, text };
+  
+  return props;
+};
+
+const actionCreators = {
+  addTask: addTaskAction,
+  changeText: changeTextAction,
+};
+
+const Tasks = connect(mapStateToProps, actionCreators)({ addTask, changeText, text, tasks }) => {
+  const onChangeText = (e) => {
+    e.preventDefault();
+
+    addTask({ text: e.target.value }));
+  }
+
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    const newTask = { id: _.uniqueId(), text: text };
+    changeText({ task: newTask });
+  }
+
+  return (
+    <div>
+      <form action="" className="form-inline" onSubmit={onSubmitForm}>
+        <div className="form-group mx-sm-3">
+          <input type="text" required value={text} onChange={this.onChangeText} />
+        </div>
+        <input type="submit" className="btn btn-primary btn-sm" value="Add" />
+      </form>
+      <div className="mt-3">
+        <ul className="list-group">
+          {tasks.map(({ id, text }) => (
+            <li key={id} className="list-group-item d-flex">
+              <span className="mr-auto">{text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+const store = createStore(reducers);
+
+render(
+  <Provider store={store}>
+    <Tasks />
+  </Provider>,
+  document.getElementById('container'),
+);
+```
