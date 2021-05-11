@@ -276,7 +276,7 @@ const Tasks = connect(mapStateToProps, actionCreators)({ addTask, changeText, te
   const onSubmitForm = (e) => {
     e.preventDefault();
     const newTask = { id: _.uniqueId(), text: text };
-    addTask({ task: newTask });addTask
+    addTask({ task: newTask });
   }
 
   return (
