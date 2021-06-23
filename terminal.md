@@ -33,3 +33,9 @@ du -a /DIR_NAME | sort -n -r | head -n 10
 ```bash
 find /path/to/dir/ -printf '%s %p\n'| sort -nr | head -10
 ```
+
+# Поиск
+Поиск выражение NAME в файлах директории DIR_NAME
+```bash
+grep -r NAME /DIR_NAME
+```
