@@ -31,7 +31,7 @@ du -a /DIR_NAME | sort -n -r | head -n 10
 
 Список самых жирных файлов в DIR_NAME
 ```bash
-find /path/to/dir/ -printf '%s %p\n'| sort -nr | head -10
+find /DIR_NAME -printf '%s %p\n'| sort -nr | head -10
 ```
 
 # Поиск
