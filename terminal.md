@@ -39,3 +39,9 @@ find /DIR_NAME -printf '%s %p\n'| sort -nr | head -10
 ```bash
 grep -r NAME /DIR_NAME
 ```
+
+# Разное
+Пересылка локального файла на сервер
+```bash
+scp file wwwuser@site.com:site.com/dir/file
+```
