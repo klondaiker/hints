@@ -191,3 +191,26 @@ UPDATE accounts SET amount = amount - 50 WHERE user_id = 10;
 UPDATE accounts SET amount = amount + 50 WHERE user_id = 30;
 COMMIT;
 ```
+
+# Производительность
+EXPLAIN
+```sql
+EXPLAIN SELECT * FROM users
+  JOIN topics ON users.id = topics.user_id
+  WHERE users.created_at > '10.10.2018';
+
+                                       QUERY PLAN
+-----------------------------------------------------------------------------------------
+ Hash Join  (cost=10.66..23.59 rows=42 width=2377)
+   Hash Cond: (topics.user_id = users.id)
+   ->  Seq Scan on topics  (cost=0.00..11.30 rows=130 width=572)
+   ->  Hash  (cost=10.50..10.50 rows=13 width=1805)
+         ->  Seq Scan on users  (cost=0.00..10.50 rows=13 width=1805)
+               Filter: (created_at > '2018-10-10 00:00:00'::timestamp without time zone)
+(6 rows)
+
+```
+Индексы
+```sql
+CREATE INDEX ON users(birthday)
+```
