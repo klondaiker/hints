@@ -107,7 +107,10 @@ TRUNCATE courses;
 # DQL (Data Query Language)
 Выборка данных
 ```sql
+-- Все поля из users
 SELECT * FROM users;
+-- Конкретные поля с псеводнимом AS
+SELECT username AS name FROM users;
 -- Строгий порядок: WHERE, ORDER BY, DESC(ASK), LIMIT
 SELECT username, created_at FROM users WHERE birthday < '2018-10-21' ORDER BY birthday DESC LIMIT 2;
 
@@ -140,8 +143,10 @@ SELECT * FROM users WHERE first_name = 'Sunny' OR (created_at > '2018-01-01' AND
 SELECT * FROM users WHERE created_at BETWEEN '2018-01-01' AND '2018-10-05';
 ---- IN
 SELECT * FROM users WHERE id IN (1, 2, 5);
----- LIKE (ILIKE - без регистра)
+---- LIKE, NOT LIKE (ILIKE - без регистра)
 SELECT * FROM users WHERE first_name LIKE 'A%';
+---- ~, !~ (оператор с регулярными выражениями POSIX)
+SELECT * FROM users WHERE first_name ~ '^(A|Boe)';
 ---- LIMIT
 SELECT * FROM users LIMIT 10;
 SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 30;
@@ -183,6 +188,14 @@ SELECT first_name, title FROM users JOIN topics ON users.id = topics.user_id LIM
 -- LEFT JOIN берёт все данные из одной таблицы и присоединяет к ним данные из другой, если они присутствуют. 
 -- Если нет, то заполняет их NULL. Чисто технически этот запрос отличается только тем, что добавляется слово LEFT:
 SELECT first_name, title FROM users LEFT JOIN topics ON users.id = topics.user_id LIMIT 5;
+
+-- Подзапросы
+-- Подзапросы могут присутствовать в предложениях SELECT, FROM, WHERE и HAVING, WITH
+SELECT count( * ) FROM bookings WHERE total_amount > ( SELECT avg( total_amount ) FROM bookings );
+-- IN
+SELECT departure_city FROM routes WHERE departure_city IN (SELECT city FROM airports WHERE timezone ~ 'Krasnoyarsk')
+-- EXISTS (NOT EXISTS)
+SELECT DISTINCT a.city FROM airports a WHERE NOT EXISTS ( SELECT * FROM routes r WHERE r.departure_city = 'Москва' AND r.arrival_city = a.city)
 
 -- Транзакционность 
 BEGIN;
