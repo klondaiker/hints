@@ -196,8 +196,9 @@ SELECT count( * ) FROM bookings WHERE total_amount > ( SELECT avg( total_amount 
 SELECT departure_city FROM routes WHERE departure_city IN (SELECT city FROM airports WHERE timezone ~ 'Krasnoyarsk')
 -- EXISTS (NOT EXISTS)
 SELECT DISTINCT a.city FROM airports a WHERE NOT EXISTS ( SELECT * FROM routes r WHERE r.departure_city = 'Москва' AND r.arrival_city = a.city)
-
--- Транзакционность 
+```
+# Транзакционность
+```sql
 BEGIN;
 SELECT amount FROM accounts WHERE user_id = 10;
 UPDATE accounts SET amount = amount - 50 WHERE user_id = 10;
