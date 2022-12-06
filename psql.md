@@ -206,6 +206,20 @@ COMMIT;
 ```
 
 # Производительность
+Индексы
+```sql
+-- Создание индекса
+CREATE INDEX user_birthday ON users(birthday)
+-- Удаление индекса
+DROP INDEX user_birthday;
+-- Создание уникального индекса
+CREATE UNIQUE INDEX aircrafts_unique_model_key ON aircrafts (model);
+-- Индексы на основе выражений
+CREATE UNIQUE INDEX aircrafts_unique_model_key ON aircrafts ( lower( model ) );
+-- Частичные индексы
+CREATE INDEX bookings_book_date_part_key ON bookings ( book_date ) WHERE total_amount > 1000000;
+```
+
 EXPLAIN
 ```sql
 EXPLAIN SELECT * FROM users
@@ -222,8 +236,4 @@ EXPLAIN SELECT * FROM users
                Filter: (created_at > '2018-10-10 00:00:00'::timestamp without time zone)
 (6 rows)
 
-```
-Индексы
-```sql
-CREATE INDEX ON users(birthday)
 ```
