@@ -185,7 +185,8 @@ SELECT departure_city FROM routes WHERE departure_city IN (SELECT city FROM airp
 SELECT DISTINCT a.city FROM airports a WHERE NOT EXISTS ( SELECT * FROM routes r WHERE r.departure_city = 'Москва' AND r.arrival_city = a.city)
 ```
 
-# ACID
+# Транзакционность
+## ACID
 Atomicity — Атомарность\
 Любая транзакция не может быть частично завершена — она либо выполнена, либо нет.
 
@@ -198,7 +199,6 @@ Isolation — Изолированность\
 Durability — Устойчивость\
 Независимо от проблем на нижних уровнях (к примеру, обесточивание системы или сбои в оборудовании) изменения, сделанные успешно завершённой транзакцией, должны остаться сохранёнными после возвращения системы в работу. Другими словами, если пользователь получил подтверждение от системы, что транзакция выполнена, он может быть уверен, что сделанные им изменения не будут отменены из-за какого-либо сбоя.|
 
-# Транзакционность
 ```sql
 BEGIN;
 SELECT amount FROM accounts WHERE user_id = 10;
