@@ -32,7 +32,7 @@ Benchmark инструменты:
 Инструменты для профилирования:
 1) [rbspy](https://github.com/rbspy/rbspy) - подключение к текущему процессу
 2) [ruby-prof](https://github.com/ruby-prof/ruby-prof)
-  * RubyProf::FlatPrinter - медленные методы
-  * RubyProf::GraphHtmlPrinter - медленные части кода
-  * RubyProf::CallStackPrinter - медленные пути исполнения
-  * RubyProf::CallTrueePrinter(для qcachegrind)- мощный визуальный инструмент
+  * `RubyProf::FlatPrinter` - медленные методы
+  * `RubyProf::GraphHtmlPrinter` - медленные части кода
+  * `RubyProf::CallStackPrinter` - медленные пути исполнения
+  * `RubyProf::CallTrueePrinter`(для qcachegrind)- мощный визуальный инструмент
