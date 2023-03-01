@@ -17,7 +17,7 @@
 GIL не обеспечивает потокобезопасноть (делает атомарными только некоторые операции (puts, Array#push)), \
 но не дает интерпретатору разрушиться при нескольких тредах
 
-**Поэтому оптимизируем самим!**
+**Поэтому оптимизируем сами!**
 
 Локализация и устранение точки роста CPU:
 1) Отключение GC при профилировании
@@ -31,4 +31,8 @@ Benchmark инструменты:
 
 Инструменты для профилирования:
 1) [rbspy](https://github.com/rbspy/rbspy) - подключение к текущему процессу
-2) [ruby-prof](https://github.com/ruby-prof/ruby-prof) - RubyProf::FlatPrinter, RubyProf::GraphHtmlPrinter, RubyProf::CallStackPrinter
+2) [ruby-prof](https://github.com/ruby-prof/ruby-prof)
+  * RubyProf::FlatPrinter - медленные методы
+  * RubyProf::GraphHtmlPrinter - медленные части кода
+  * RubyProf::CallStackPrinter - медленные пути исполнения
+  * RubyProf::CallTrueePrinter(для qcachegrind)- мощный визуальный инструмент
