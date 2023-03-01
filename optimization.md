@@ -1,3 +1,5 @@
+[Performance Dashboard](https://docs.google.com/spreadsheets/d/1eNysCmQsca_F2U6O27WxiEBx0HhNS_Rxu-hVMxh_PGg/edit#gid=1564412399)
+
 # Оптимизация
 Целесообразность оптимизации: \
 Экономия на железе > время работы программиста на оптимизацию
