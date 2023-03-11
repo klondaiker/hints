@@ -22,7 +22,7 @@ GIL не обеспечивает потокобезопасноть (делае
 **Поэтому оптимизируем сами!**
 
 ## Локализация и устранение главной точки роста CPU:
-1) Отключение GC при профилировании
+1) Отключение GC при профилировании (но не в benchmark)
 2) Использование benchmark инструментов для замера времени работы и локализации точки роста
 3) Использование профилировщиков для устранения точки роста
 
@@ -53,3 +53,20 @@ c) Сильно замедляют программу
   * `RubyProf::GraphHtmlPrinter` - медленные части кода
   * `RubyProf::CallStackPrinter` - медленные пути исполнения
   * `RubyProf::CallTrueePrinter`(для qcachegrind)- мощный визуальный инструмент
+
+# Оптимизация Memory
+## Слои работы с памятью
+1) Ruby-код
+2) Ruby runtime (VM, GC)
+3) Allocator
+4) OS
+5) Actual Memory (RAM/SWAP)
+
+## Garbage collector
+1) Mark and sweep
+2) Lazy sweep (1.9.3)
+3) Generational (2.1) <-- большой буст в производительности Memory и CPU
+4) Incremental (lazy mark) (2.2)
+5) Compacting (2.7)
+6) No parallel
+7) No real-time
