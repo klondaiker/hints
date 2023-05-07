@@ -169,7 +169,7 @@ EXPLAIN ANALYZE реально выполняет запрос и добавля
 https://github.com/ankane/strong_migrations
 
 ## N + 1
-https://github.com/flyerhzm/bullet
+https://github.com/flyerhzm/bullet \
 https://github.com/nepalez/rspec-sqlimit
 
 ## VACUUM
