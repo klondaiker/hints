@@ -160,3 +160,16 @@ Framework для создания индекса \
 Стоимость измеряется в условных единицах \
 Стоимость внешних узлов включает в себя стоимость внутренних \
 EXPLAIN ANALYZE реально выполняет запрос и добавляет actual_time - время в ms, по каждому узлу плана \
+
+## Тюнинг настроек постгреса
+Вкладка Tune в PgHero \
+Книга: https://postgresql.leopard.in.ua/
+
+## Предотвращение проблем с БД
+https://github.com/ankane/strong_migrations
+
+## N + 1
+https://github.com/flyerhzm/bullet
+https://github.com/nepalez/rspec-sqlimit
+
+## VACUUM
