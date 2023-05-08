@@ -198,3 +198,15 @@ DIY
 
 ## Local production
 gem ankane/pgsync
+
+## Load-test и Benchmark
+Удобны для получения метрики и бюджета, к которому мы стремимся
+1) siege
+2) ab (apache framework)
+3) wrk, wrk2
+
+## Инструменты
+1) Обязательно использовать local_production
+2) rack-mini-profiler
+3) ruby-prof в любом интересующем месте
+4) rbspy к работающему app-серверу
