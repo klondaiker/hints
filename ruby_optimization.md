@@ -173,3 +173,28 @@ https://github.com/flyerhzm/bullet \
 https://github.com/nepalez/rspec-sqlimit
 
 ## VACUUM
+
+# Оптимизация Backend
+## Закон Литтла
+I = L * T \
+Instances, Load(req/sec), Response Time (sec/req) \
+
+## Rules of thumb from Nate Berkopec
+95th percentile  <= 4 * avg для каждого endpoint \
+endpoint avg <= 4 * app_avg для каждого endpoint
+
+## Сервисы мониторинга
+Saas
+1) Skylight.io
+2) NewRelic (Gmonit)
+3) Scout
+4) Datadog
+
+DIY
+1) ELK (Elastic, logstash, Kibana)
+2) Prometheus + graphana (gem prometheus_exporter, yabeda)
+
+Можно и нужно настраивать алерты - эфективная обратная связь от системы мониторинга
+
+## Local production
+gem ankane/pgsync
