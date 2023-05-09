@@ -236,7 +236,7 @@ https://github.com/rails/actionpack-page_caching
 https://github.com/rails/actionpack-action_caching
 4) Low-level caching (Rails.cache.fetch)
 5) Custom caching (мемоизация)
-6) HTTP caching (304)
+6) HTTP caching (304 - stale?)
 
 ## Хорошие фоновые задачи
 1) Идемпотентность (можно запускать дважды)
@@ -272,5 +272,67 @@ DIY \
 gem ahoy, yabeda + Grafana, Kibana
 
 ## Цели
-1) Сравнить себя с конкурентами
+1) Сравнить себя с конкурентами (должны быть на 20% быстрее)
 2) Browser calories (браузер-расширения)
+3) Вовлекать всю компанию
+4) Меньше 300мс, хорошо - 100мс
+5) 5с на TTI на телефонах с 3G
+6) SpeedIndex < 1250
+7) Critical file suze budget 170kb gzipped (400kb)
+8) https://www.performancebudget.io/
+
+Google tag manager - зло!
+
+## Latency and bandwidth
+Latency - время передачи пакета от источника до получателя (нужен чтобы быстро открывались сайты, состоящие из сотен ресурсов)
+Bandwidth - максимальное кол-во информации, которое можно передать (нужен больше для стриминга/скачивания видео)
+
+Как улучшить Latency? 
+1) CDN
+2) Не делать лишних roundtrip-ов
+
+## TCP
+1) Обновить Linux
+2) Прочитать HBPN
+3) CDN
+4) http://bagder.github.io/I-D/httpbis-tcp/
+
+## HTTP
+1) HTTP COOKIES BLOAT
+2) Переход на HTTP/2 (все ускорится в 2 раза)
+
+## TLS
+SSL (Netscape) - коммерческое название
+
+Обеспечивает:
+1) Encryption
+2) Authenication
+3) Integrity
+
+1) Идентификация - показать паспорт
+2) Аутентификация - проверить его подлинность
+3) Авторизация - разрешить зайти в бизнес центр, если заказан пропуск на этот паспорт
+
+Checklist
+1) Проверить утилитой для теста
+2) Проверить сертификаты
+3) Обязательно настроить установку TLS-соединения за 1 Roundtrip
+4) Terminate TLS closer to the user
+5) Настроить HSTS
+
+## Аssets
+1) CDN для asset-ов (config.action_controller.asset_host = "assets%d.example.com", %d - обход ограничения параллелизма)
+2) Инлайнинг дает больше минусов, чем плюсов
+
+## WebPageTest
+https://www.webpagetest.org/ (https://www.webpagetest.org/result/230509_BiDcAS_B86/) \
+Можно настройть свой webpagetest для прогонов!
+
+Строим таблицу прогонов и обновляем ее
+
+# Оптимизация для браузера
+
+## Полный чеклист от Виталия Фридмана
+https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/
+
+
