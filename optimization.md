@@ -324,15 +324,36 @@ Checklist
 1) CDN для asset-ов (config.action_controller.asset_host = "assets%d.example.com", %d - обход ограничения параллелизма)
 2) Инлайнинг дает больше минусов, чем плюсов
 
-## WebPageTest
-https://www.webpagetest.org/ (https://www.webpagetest.org/result/230509_BiDcAS_B86/) \
-Можно настройть свой webpagetest для прогонов!
-
-Строим таблицу прогонов и обновляем ее
-
 # Оптимизация для браузера
 
 ## Полный чеклист от Виталия Фридмана
 https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/
 
+##  Инструменты
+1) WebPageTest \
+https://www.webpagetest.org/ (https://www.webpagetest.org/result/230509_BiDcAS_B86/) \
+Можно настройть свой webpagetest для прогонов! \
+Строим таблицу прогонов и обновляем ее
+2) LightHouse (Google Chrome dev tools)
+3) PWMetrics
+4) PageSpeed Insight
+
+## Мониторинг
+Saas
+1) NewRelic Browser (Gmonit ?)
+2) CRUX
+Google собирает RUM данные с Chrome \
+Можно получить к ним доступ через BigQuery Data Warehouse
+3) LightHouse-keeper
+4) Speedcurve
+5) Calibre
+
+DIY \
+Sitespeed.io (и может собирать данные из всех перечисленных Saas-данных
+
+CI
+1) Sitespeed.io \
+https://github.com/spajic/performance-ci-demo/blob/master/.travis.yml
+2) LightHouse CI
+https://github.com/GoogleChrome/lighthouse-ci
 
