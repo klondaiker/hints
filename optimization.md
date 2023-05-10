@@ -481,3 +481,17 @@ gem guard-livereload
 2) Кеширование гемов по Gemfile.lock
 3) Кеш для webpack-cache-loader
 4) Запуск тестов в два процесса
+
+## Профилирование Gemfile
+gem derailed_benchmarks \
+bundle exec derailed bundle:mem \
+
+## Мониторинг серверов
+
+Мониторинг железа
+1) NewRelic
+2) Cloud platform
+3) DIY - Prometheus, Graphana 
+
+Мониторинг Puma \
+gem Yabeda + prometheus_exporter
