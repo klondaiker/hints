@@ -4,6 +4,7 @@
 - docker tag - Присвоить тег образу Docker (docker tag 66c76cea05bb todoapp)
 - docker run - Запустить образ Docker в качестве контейнера (docker run -i -t -p 8000:8000 --name example1 todoapp)
 - docker commit - Сохранить контейнер Docker в качестве образа
+- docker images - Список всех образов
 - docker ps - Список всех контейнеров (docker ps -a)
 - docker start - перезапустить контейнер (docker start example1)
 - docker rm - очищает контейнер (docker rm example1)
