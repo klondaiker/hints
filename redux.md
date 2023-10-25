@@ -68,7 +68,7 @@ const reducer = (state = { text: '', tasks: [] }, action) => {
     case 'TEXT_CHANGE':
       return { text: action.payload.text, tasks: state.tasks };
     case 'TASK_ADD':
-      return { text: '', tasks: [newTask, ...tasks] };
+      return { text: '', tasks: [ action.payload.task, ...tasks] };
     default:
       return state;
   }
