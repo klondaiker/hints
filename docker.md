@@ -27,5 +27,6 @@ EXPOSE 8000
 # Указывает, какая команда будет запущена при запуск
 CMD ["npm", "start"]
 ```
+## Docker Volume
 ## Docker Compose
 ## Docker Swarm
