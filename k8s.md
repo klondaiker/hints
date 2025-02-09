@@ -34,7 +34,10 @@ Deployments:
 - `kubectl create deployment $DEPLOYMENT --image $IMAGE` - создание деплоймента
 - `kubectl describe deployment $DEPLOYMENT` - информация о деплойменте
 - `kubectl scale deployment $DEPLOYMENT --replicas $N -n $NAMESPACE` - скалировать реплики деплоймента
-- `kubectl autoscale deployment $DEPLOYMENT --min=4 --max=6 --cpu-percent=80` - автоскалирование
+- `kubectl autoscale deployment $DEPLOYMENT --min=4 --max=6 --cpu-percent=80` - автоскалирование деплоймента (создание HorizontalPodAutoscaler)
+- `kubectl rollout history deployment $DEPLOYMENT` - история деплоймента
+- `kubectl rollout status deployment $DEPLOYMENT` - статус деплоймента
+- `kubectl rollout undo deployment $DEPLOYMENT --to-revision=$N` - возврат на предыдующую версию
 
 Pods:
 - `kubectl get pods -n $NAMESPACE` - показать все поды пространства
@@ -48,3 +51,4 @@ Pods:
 Config:
 - `kubectl apply -f example.yaml` - примененение манифест-файла
 - `kubectl delete -f example.yaml` - удаление манифеста
+
