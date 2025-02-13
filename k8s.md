@@ -76,6 +76,8 @@ spec:
     image: alpine
     command: ["tail", "-f", "/dev/null"]
 ```
+## Volume
+
 ## Helm
 Разрешает проблему дубликатов манифестов при их изменении
 <img width="1454" alt="Снимок экрана 2025-02-14 в 02 22 01" src="https://github.com/user-attachments/assets/e0bd71c9-a0cf-4c87-bd6e-39a0cfa2a457" />
@@ -87,6 +89,3 @@ spec:
 - `helm upgrade $APP $CHART_FOLDER/` - обновления деплоя
 - `helm package $CHART_FOLDER/` - запаковать чарт в архив
 - `helm delete $APP` - удалить деплой
-
-
-## Volume
