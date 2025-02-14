@@ -1,6 +1,6 @@
 # SOFT SKILLS:
 
-## Технические требования
+## Software Requirements
 ⏳ Вигерс - разработка требовании к программному обеспечению
 
 # HARD SKILLS:
@@ -33,11 +33,11 @@ https://thinknetica.teachbase.ru/course_sessions/862689 \
 ✅ Оптимизация Ruby/Rails-приложений \
 https://thinknetica.teachbase.ru/course_sessions/584374 
  
-## POSTGRESQL 
+## PostrgeSQL 
 ✅ PostgreSQL Основы языка SQL \
 ⏳ PostgreSQL 17 изнутри
    
-## DEVOPS
+## DevOps
 ✅ Linux: Уильям Шотс - Командная строка Linux. Полное руководство \
 ✅ Docker: https://www.youtube.com/watch?v=I18TNwZ2Nqg \
 ✅ Kubernetes: https://www.youtube.com/playlist?list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi \
