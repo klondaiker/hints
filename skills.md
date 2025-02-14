@@ -20,7 +20,7 @@
 ✅ React: https://ru.hexlet.io/courses/js-react \
 ✅ Redux: https://ru.hexlet.io/courses/js-redux-toolkit
 
-## ROR (fullstack)
+## RubyOnRails
 ✅ Фултон - Путь Руби \
 ✅ Хартл Майкл - Ruby on Rails для начинающих. Изучаем разработку веб-приложений на основе Rails \
 ✅ https://guides.rubyonrails.org/ \
