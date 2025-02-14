@@ -30,7 +30,7 @@ https://thinknetica.teachbase.ru/course_sessions/658436 \
 ✅ Владимир Дементьев - Проектирование Ruby on Rails приложений: слой за слоем \
 ⏳ Профилирование и оптимизация тестов Rails-приложений \
 https://thinknetica.teachbase.ru/course_sessions/862689 \
-⏳ Оптимизация Ruby/Rails-приложений \
+✅ Оптимизация Ruby/Rails-приложений \
 https://thinknetica.teachbase.ru/course_sessions/584374 
  
 ## POSTGRESQL 
