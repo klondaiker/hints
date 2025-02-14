@@ -12,10 +12,10 @@
 ⏳ Клепман - высоконагруженные приложения \
 ⏳ Алекс Сюй - System Design 
 
-## HTML+CSS (Flex, grid и тд)
+## HTML+CSS
 ✅ Flex: https://htmlacademy.ru/courses/96
 
-## JavaScript (React)
+## JavaScript
 ✅ JS: https://ru.hexlet.io/courses/js-basics \
 ✅ React: https://ru.hexlet.io/courses/js-react \
 ✅ Redux: https://ru.hexlet.io/courses/js-redux-toolkit
@@ -37,7 +37,7 @@ https://thinknetica.teachbase.ru/course_sessions/584374
 ✅ PostgreSQL Основы языка SQL \
 ⏳ PostgreSQL 17 изнутри
    
-## DEVOPS (linux, docker, kubernetes, terraform, yandex cloud)
+## DEVOPS
 ✅ Linux: Уильям Шотс - Командная строка Linux. Полное руководство \
 ✅ Docker: https://www.youtube.com/watch?v=I18TNwZ2Nqg \
 ✅ Kubernetes: https://www.youtube.com/playlist?list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi \
