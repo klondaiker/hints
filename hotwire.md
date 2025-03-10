@@ -65,11 +65,10 @@ end
 
 ```
 
-
 ## Streams
 
 # Stimulus
-Что это такое?
+Что это такое? \
 js-микрофреймворк
 
 Для чего?
@@ -93,3 +92,28 @@ export class BannerController extends Controller {
   }
 }
 ```
+```js
+import { Application } from '@hotwired/stimulus';
+import { BannerController } from 'banner_controller';
+
+const application = Application.start();
+
+application.register("banner", BannerController)
+```
+Чтобы не перечислять все контроллеры, можно подключить  так (пример с Vite)
+```js
+import { registerControllers } from 'stimulus-vite-helpers';
+const controllers = import.meta.glob('./**/*_controller.*', { eager: true });
+registerControllers(application, controllers);
+```
+
+Типы контроллеров:
+1) Поведение (removeable_controller) - атомарное поведение, атомарность позволяет переиспользовать и комбинировать стимулы
+2) Компонент (banner_controller) - неплохо работает в связке с view components, не силен в сложных js-компонентах
+
+API:
+1) data-action: обработчики событии (которые не утекают)
+2) data-target: инъекция DOM-зависимостей
+3) data-value: реактивное состояние
+4) data-class: скажем нет связности с CSS
+5) data-outlet: строим составные стимулы
