@@ -66,6 +66,25 @@ end
 ```
 
 ## Streams
+Что это такое?
+1) Декларативное изменение DOM
+2) Изначально - для обновления по инициатие сервера (push-модель, WebSockets, SSE и тд)
+3) Но сейчас активно используется и в рамках HTTP как более гибкое решение, чем Frames
+
+Что из себя представляет?
+1) Самоисполняемый и самоудаляемый HTML элемент
+2) Содержит действие (action), ID цели (target) и почти всегда шаблон (template)
+
+```erb
+<turbo-stream action="replace" target="player">
+  <template>
+    <div class="player">...</div>
+  </template>
+</turbo-stream>
+```
+
+Список actions: append, prepend, replace, update, after, before, remove
+Можно добавить свои с 7.2 версии
 
 # Stimulus
 Что это такое? \
@@ -100,7 +119,7 @@ const application = Application.start();
 
 application.register("banner", BannerController)
 ```
-Чтобы не перечислять все контроллеры, можно подключить  так (пример с Vite)
+Чтобы не перечислять все контроллеры, можно подключить след образом (пример с Vite):
 ```js
 import { registerControllers } from 'stimulus-vite-helpers';
 const controllers = import.meta.glob('./**/*_controller.*', { eager: true });
