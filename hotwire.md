@@ -20,6 +20,21 @@ import "@hotwired/turbo-rails"
 ```
 Все! TurboDrive подключен автоматически
 
+Можно вручную загрузить страницы с Турбо \
+**Application visits**:
+```js
+// Визит по-умолчанию c {action: "advance"} - добавляет запись в историю history.pushState
+Turbo.visit("/example")
+
+// Заменяет самую верхнюю запись истории history.replaceState
+Turbo.visit("/edit", { action: "replace" })
+```
+**Restoration visits (TurboDrive: кэш)**: Turbo Drive отобразит копию страницы из кэша без запроса.
+1) Turbo сохраняет слепки страниц при переходах
+2) Слепок показывается при навигации Вперед/Назад в браузере и перед переходом (preview)
+3) Слепок исключает элeменты, помеченные data-turbo-remporary (например alert или flash)
+
+
 **Morphing and Scroll** \
 Morphing позволяет заменять только элементы которые изменились. Используется библиотека [idiomorph](https://github.com/bigskysoftware/idiomorph)\
 Scroll можно управлять прокруткой страницы
@@ -30,11 +45,6 @@ turbo_refreshes_with method: :morph, scroll: :preserve
 ```
 `data-turbo-permanent` говорит Turbo не перерисовывать элемент если id совпадает, \
 те исключает элемент из процесса морфинга или replace
-
-**TurboDrive: кэш**
-1) Turbo сохраняет слепки страниц при переходах
-2) Слепок показывается при навигации Вперед/Назад в браузере и перед переходом (preview)
-3) Слепок исключает элeменты, помеченные data-turbo-remporary (например alert или flash)
 
 ## Frames
 Что это такое?
