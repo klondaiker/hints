@@ -34,13 +34,10 @@
 ✅ Хартл Майкл - Ruby on Rails для начинающих. Изучаем разработку веб-приложений на основе Rails \
 ✅ https://guides.rubyonrails.org/ \
 ✅ https://hotwired.dev/ \
-⏳ Современные Rails-приложения с Hotwire \
-https://thinknetica.teachbase.ru/course_sessions/658436 \
+✅ Современные Rails-приложения с Hotwire
 ✅ Владимир Дементьев - Проектирование Ruby on Rails приложений: слой за слоем \
 ⏳ Профилирование и оптимизация тестов Rails-приложений \
-https://thinknetica.teachbase.ru/course_sessions/862689 \
-✅ Оптимизация Ruby/Rails-приложений \
-https://thinknetica.teachbase.ru/course_sessions/584374 
+✅ Оптимизация Ruby/Rails-приложений \ 
  
 ## PostrgeSQL 
 ✅ PostgreSQL Основы языка SQL \
